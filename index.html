@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách đội tuyển Việt Nam</title>
+
+  <script src="JS/jquery-3.6.0.min.js"></script>
+  <script src="JS/bootstrap.min.js"></script>
+  <script src="JS/script.js"></script>
+
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <img src="IMG/Header.PNG" alt="" width="100%">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar">
+          <ul class="nav navbar-nav">
+            <li class="navbar-item">
+              <a href="" class="navbar-link">Đăng nhập</a>
+            </li>
+            <li class="navbar-item">
+              <a id="dangKy" class="navbar-link">Đăng ký</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <caption>DANH SÁCH ĐỘI TUYỂN VIỆT NAM</caption>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Họ tên</th>
+              <th>Số áo</th>
+              <th>Câu lạc bộ</th>
+              <th>Ngày tập trung</th>
+              <th>Điện thoại</th>
+              <th>Ảnh đại diện</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center">SVTH: Lê Trọng Nghĩa Mã Sinh viên: 20095041 Lớp: DHKTPM16FTT</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalDangKy">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="position: relative;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="text-center">THÔNG TIN CÁ NHÂN</h1>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form action="" class="form-horizontal">
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="inpHoTen" class="control-label pull-right">Họ tên</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" name="inpHoTen" id="inpHoTen" placeholder="Nhập họ tên" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">
+                    <p id="resultHoTen" class="text-danger">*</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="inpSoAo" class="control-label pull-right">Số áo</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="number" name="inpSoAo" id="inpSoAo" placeholder="Nhập số áo đội tuyển" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">
+                    <p id="resultSoAo" class="text-danger">*</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="inpCauLacBo" class="control-label pull-right">Câu lạc bộ</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" name="inpCauLacBo" id="inpCauLacBo" placeholder="Câu lạc bộ của bạn" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">
+                    <p id="resultCauLacBo" class="text-danger">*</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="inpNgayTapTrung" class="control-label pull-right">Ngày tập trung</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="date" name="inpNgayTapTrung" id="inpNgayTapTrung" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">
+                    <p id="resultNgayTapTrung" class="text-danger">*</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="inpSoDienThoai" class="control-label pull-right">Số điện thoại</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="tel" name="inpSoDienThoai" id="inpSoDienThoai" placeholder="0xxx-xxx-xxx" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">
+                    <p id="resultSoDienThoai" class="text-danger">*</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="inpAnhDaiDien" class="control-label pull-right">Ảnh đại diện</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="file" name="inpAnhDaiDien" id="inpAnhDaiDien" accept=".png, .jpg" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-9">
+                    <p id="resultAnhDaiDien" class="text-danger">*</p>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" name="luu" id="luu" value="Lưu" class="btn btn-success form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
